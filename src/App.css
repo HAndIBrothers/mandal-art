@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
+}
+
+.main__item {
+  width: 180px;
+  height: 180px;
+}
