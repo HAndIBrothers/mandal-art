@@ -1,10 +1,13 @@
 import "./App.css";
+import "./reset.css";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
+      <Header />
       <MainContainer />
     </div>
   );
@@ -12,19 +15,41 @@ function App() {
 
 function MainContainer() {
   const data = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  function handleChange(evt) {
+    dispatch({
+      type: "INPUT_CHANGE",
+      payload: { xy: evt.target.id, value: evt.target.value },
+    });
+  }
 
   let element = [];
-  for (let x = 1; x < 10; x++) {
-    for (let y = 1; y < 10; y++) {
-      const key = `x${x}y${y}`;
-      element.push(<li id={key}>{data[key].text}</li>);
+  for (let i = 1; i < 10; i++) {
+    let row = [];
+    for (let j = 1; j < 10; j++) {
+      const key = `x${i}y${j}`;
+      row.push(
+        <div key={key} className={`group${i}__item group__item`}>
+          <input
+            id={key}
+            onChange={handleChange}
+            type="text"
+            value={data[key].text}
+          />
+        </div>,
+      );
     }
+    element.push(
+      <div key={`group${i}`} className={`group${i} group`}>
+        {row}
+      </div>,
+    );
   }
-  console.log(element);
   return (
-    <article className="main">
-      <ul>{element}</ul>
-    </article>
+    <main className="main">
+      <section className="cell-container">{element}</section>
+    </main>
   );
 }
 export default App;

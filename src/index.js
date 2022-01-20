@@ -2,24 +2,31 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-// import store from "./app/store";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 
 function reducer(state, action) {
   let obj = {};
-  if (state === undefined) {
-    for (let i = 1; i < 10; i++) {
-      for (let j = 1; j < 10; j++) {
-        // obj.push({
-        //   [`x${i}y${j}`]: { connted_node: -1, text: `x: ${i} y: ${j}` },
-        // });
-        obj[`x${i}y${j}`] = { connted_node: -1, text: `x: ${i} y: ${j}` };
+  switch (action.type) {
+    case "INPUT_CHANGE":
+      const { xy, value } = action.payload;
+      const newState = { ...state };
+      console.log("INPUT CHANGED");
+      newState[xy].text = value;
+      return newState;
+    default:
+      for (let i = 1; i < 10; i++) {
+        for (let j = 1; j < 10; j++) {
+          obj[`x${i}y${j}`] = {
+            x: i,
+            y: j,
+            connted_node: -1,
+            text: `x: ${i} y: ${j}`,
+          };
+        }
       }
-    }
-    console.log("state", obj);
-    return obj;
+      return obj;
   }
 }
 
