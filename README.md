@@ -4,11 +4,17 @@ Right plans & acts make the goal real
 
 ---
 
-### Development - HeJ
+## Development log
+### Ryu
+- save
+
+### HeJ
 
 - connect specific cells
 - [x] State initialize
 - [x] Draw boxes
+
+---
 
 ### Credits
 
