@@ -10,19 +10,29 @@ function reducer(state, action) {
   let obj = {};
   switch (action.type) {
     case "INPUT_CHANGE":
-      const { xy, value } = action.payload;
+      const { xy, value, connected_node } = action.payload;
       const newState = { ...state };
       console.log("INPUT CHANGED");
       newState[xy].text = value;
+      if (connected_node) {
+        newState[connected_node].text = value;
+      }
       return newState;
     default:
-      for (let i = 1; i < 10; i++) {
-        for (let j = 1; j < 10; j++) {
-          obj[`x${i}y${j}`] = {
-            x: i,
-            y: j,
-            connted_node: -1,
-            text: `x: ${i} y: ${j}`,
+      for (let group = 1; group < 10; group++) {
+        for (let cell = 1; cell < 10; cell++) {
+          let connected_node = null;
+          if (group !== 5 && cell === 5) {
+            connected_node = `x${cell}y${group}`;
+          }
+          if (group === 5 && cell !== 5) {
+            connected_node = `x${cell}y${group}`;
+          }
+          obj[`x${group}y${cell}`] = {
+            x: group,
+            y: cell,
+            connected_node: connected_node,
+            text: "",
           };
         }
       }

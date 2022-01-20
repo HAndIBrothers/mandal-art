@@ -18,21 +18,29 @@ function MainContainer() {
   const dispatch = useDispatch();
 
   function handleChange(evt) {
+    const connected_node = evt.target.dataset.connected_node
+      ? evt.target.dataset.connected_node
+      : null;
     dispatch({
       type: "INPUT_CHANGE",
-      payload: { xy: evt.target.id, value: evt.target.value },
+      payload: {
+        xy: evt.target.id,
+        value: evt.target.value,
+        connected_node: connected_node,
+      },
     });
   }
 
   let element = [];
   for (let i = 1; i < 10; i++) {
-    let row = [];
+    let group = [];
     for (let j = 1; j < 10; j++) {
       const key = `x${i}y${j}`;
-      row.push(
+      group.push(
         <div key={key} className={`group${i}__item group__item`}>
           <input
             id={key}
+            data-connected_node={data[key].connected_node}
             onChange={handleChange}
             type="text"
             value={data[key].text}
@@ -42,7 +50,7 @@ function MainContainer() {
     }
     element.push(
       <div key={`group${i}`} className={`group${i} group`}>
-        {row}
+        {group}
       </div>,
     );
   }
