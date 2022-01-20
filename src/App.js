@@ -1,5 +1,6 @@
 import "./App.css";
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 
 function App() {
   return (
@@ -10,32 +11,23 @@ function App() {
 }
 
 function MainContainer() {
-  const [inputValue, setInputValue] = useState([
-    { id: 1, value: "" },
-    { id: 2, value: "" },
-    { id: 3, value: "" },
-    { id: 4, value: "" },
-    { id: 5, value: "" },
-    { id: 6, value: "" },
-    { id: 7, value: "" },
-    { id: 8, value: "" },
-    { id: 9, value: "" },
-  ]);
+  const data = useSelector((state) => state);
+  let obj = {};
+  for (let i = 0; i < data.length; i++) {
+    obj = { ...obj, ...data[i] };
+  }
+  let element = [];
+  for (let x = 1; x < 10; x++) {
+    for (let y = 1; y < 10; y++) {
+      const key = `x${x}y${y}`;
+      element.push(<li id={key}>{obj[key].text}</li>);
+    }
+  }
 
   return (
-    <div className="main">
-      <div>
-        {inputValue.map((ele) => (
-          <input
-            key={ele.id}
-            name={ele.id}
-            className="main__item"
-            type="text"
-            value={ele.value}
-          />
-        ))}
-      </div>
-    </div>
+    <article className="main">
+      <ul>{element}</ul>
+    </article>
   );
 }
 export default App;
