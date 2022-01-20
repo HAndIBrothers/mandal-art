@@ -8,16 +8,18 @@ import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 
 function reducer(state, action) {
-  let arr = [];
+  let obj = {};
   if (state === undefined) {
     for (let i = 1; i < 10; i++) {
       for (let j = 1; j < 10; j++) {
-        arr.push({
-          [`x${i}y${j}`]: { connted_node: -1, text: `x: ${i} y: ${j}` },
-        });
+        // obj.push({
+        //   [`x${i}y${j}`]: { connted_node: -1, text: `x: ${i} y: ${j}` },
+        // });
+        obj[`x${i}y${j}`] = { connted_node: -1, text: `x: ${i} y: ${j}` };
       }
     }
-    return arr;
+    console.log("state", obj);
+    return obj;
   }
 }
 

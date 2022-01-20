@@ -12,18 +12,15 @@ function App() {
 
 function MainContainer() {
   const data = useSelector((state) => state);
-  let obj = {};
-  for (let i = 0; i < data.length; i++) {
-    obj = { ...obj, ...data[i] };
-  }
+
   let element = [];
   for (let x = 1; x < 10; x++) {
     for (let y = 1; y < 10; y++) {
       const key = `x${x}y${y}`;
-      element.push(<li id={key}>{obj[key].text}</li>);
+      element.push(<li id={key}>{data[key].text}</li>);
     }
   }
-
+  console.log(element);
   return (
     <article className="main">
       <ul>{element}</ul>
