@@ -6,6 +6,12 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 
+function setLocalStorage(key, value, connected_node) {
+  localStorage.setItem(key, value);
+  console.log("Set Local Storage >> " + key + ":" + value);
+  if (connected_node != null) setLocalStorage(connected_node, value);
+}
+
 function reducer(state, action) {
   let obj = {};
   switch (action.type) {
@@ -17,6 +23,10 @@ function reducer(state, action) {
       if (connected_node) {
         newState[connected_node].text = value;
       }
+
+      // :: 로컬 스토리지 저장
+      setLocalStorage(xy, value, connected_node);
+
       return newState;
     default:
       for (let group = 1; group < 10; group++) {
@@ -28,11 +38,14 @@ function reducer(state, action) {
           if (group === 5 && cell !== 5) {
             connected_node = `x${cell}y${group}`;
           }
-          obj[`x${group}y${cell}`] = {
+          const key = `x${group}y${cell}`;
+          let value = localStorage.getItem(key);
+          if (value == null) value = "";
+          obj[key] = {
             x: group,
             y: cell,
             connected_node: connected_node,
-            text: "",
+            text: value,
           };
         }
       }
