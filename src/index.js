@@ -28,6 +28,7 @@ function reducer(state, action) {
       setLocalStorage(xy, value, connected_node);
 
       return newState;
+
     default:
       for (let group = 1; group < 10; group++) {
         for (let cell = 1; cell < 10; cell++) {
@@ -39,7 +40,15 @@ function reducer(state, action) {
             connected_node = `x${cell}y${group}`;
           }
           const key = `x${group}y${cell}`;
-          let value = localStorage.getItem(key);
+
+          // Reset 버튼 클릭시
+          let value = "";
+          if (action.type === "RESET") {
+            setLocalStorage(key, "");
+          } else {
+            value = localStorage.getItem(key);
+          }
+
           if (value == null) value = "";
           obj[key] = {
             x: group,
