@@ -3,12 +3,13 @@ import "./reset.css";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "./components/Header";
-import Modal from "./components/Modal";
+import UpperContainer from "./components/UpperContainer";
 
 function App() {
   return (
     <div className="container">
       <Header />
+      <UpperContainer />
       <MainContainer />
     </div>
   );
@@ -58,9 +59,6 @@ function MainContainer() {
   }
   return (
     <main className="main">
-      <section className="button-container">
-        <Modal />
-      </section>
       <section className="cell-container">{element}</section>
     </main>
   );
