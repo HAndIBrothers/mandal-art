@@ -3,7 +3,7 @@ import "./reset.css";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "./components/Header";
-import Modal from "./modal.js";
+import Modal from "./components/Modal";
 
 function App() {
   return (

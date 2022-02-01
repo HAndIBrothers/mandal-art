@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import "./Modal.css";
 
 const style = {
   position: "absolute",
@@ -29,8 +30,12 @@ export default function BasicModal() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <Button sx={style_button} onClick={handleOpen}>
+    <div className="modal-container">
+      <Button
+        className="modal-container__button"
+        sx={style_button}
+        onClick={handleOpen}
+      >
         Mandal-Art?
       </Button>
       <Modal
@@ -39,8 +44,13 @@ export default function BasicModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+        <Box className="modal-container__box" sx={style}>
+          <Typography
+            className="modal-container__title"
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+          >
             Text in a modal
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
