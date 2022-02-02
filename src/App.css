@@ -32,9 +32,11 @@
   grid-template-rows: 1fr 1fr 1fr;
 }
 
-.group__item > input {
+.group__item > textarea {
   border: 1px solid;
   width: 100%;
   height: 100%;
   text-align: center;
+  word-break: normal;
+  resize: none;
 }
