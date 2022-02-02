@@ -1,4 +1,6 @@
 import * as htmlToImage from "html-to-image";
+import Button from "@mui/material/Button";
+import "./Buttons.css";
 
 export default function ImageDownloadButton() {
   function handleClick() {
@@ -18,6 +20,13 @@ export default function ImageDownloadButton() {
   }
 
   return (
-    <input type="button" onClick={handleClick} value="Download Mandal Art" />
+    <div className="modal-container">
+      <Button
+        className="modal-container__button green_button"
+        onClick={handleClick}
+      >
+        Download Mandal-Art
+      </Button>
+    </div>
   );
 }
