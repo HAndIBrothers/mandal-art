@@ -73,11 +73,7 @@
   resize: none;
   font-size: larger;
 
-  display: table-cell;
   text-align: center;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
 }
 
 .group__item > textarea:hover {
@@ -92,6 +88,11 @@
 .group6__item > textarea,
 .group8__item > textarea {
   background-color: #dcf3f2;
+}
+
+.group__item:nth-child(5) > textarea {
+  font-weight: bolder;
+  font-size: x-large;
 }
 
 table > tr > td {
