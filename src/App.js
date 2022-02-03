@@ -47,7 +47,6 @@ function MainContainer() {
             onChange={handleChange}
             type="text"
             value={data[key].text}
-            contentEditable="true"
           />
         </div>,
       );
