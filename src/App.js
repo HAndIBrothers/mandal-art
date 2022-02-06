@@ -34,6 +34,21 @@ function MainContainer() {
     });
   }
 
+  function handleInput(evt) {
+    const textarea = evt.target;
+    const textarea_height_read_only = textarea.scrollHeight;
+    console.log(textarea_height_read_only);
+    textarea.style.height = 0;
+
+    if (textarea_height_read_only <= 29) {
+      textarea.style.height = "29px";
+    } else if (textarea_height_read_only <= 54) {
+      textarea.style.height = "54px";
+    } else {
+      textarea.style.height = "79px";
+    }
+  }
+
   let element = [];
   for (let i = 1; i < 10; i++) {
     let group = [];
@@ -45,6 +60,8 @@ function MainContainer() {
             id={key}
             data-connected_node={data[key].connected_node}
             onChange={handleChange}
+            onInput={handleInput}
+            rows="1"
             type="text"
             value={data[key].text}
           />
@@ -57,6 +74,7 @@ function MainContainer() {
       </div>,
     );
   }
+
   return (
     <main className="main">
       <section className="cell-container">{element}</section>
