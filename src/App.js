@@ -1,6 +1,6 @@
 import "./App.css";
 import "./reset.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "./components/Header";
 import UpperContainer from "./components/UpperContainer";
@@ -23,7 +23,7 @@ function MainContainer() {
     const connected_node = evt.target.dataset.connected_node
       ? evt.target.dataset.connected_node
       : null;
-
+    console.log("Changed");
     dispatch({
       type: "INPUT_CHANGE",
       payload: {
@@ -32,6 +32,13 @@ function MainContainer() {
         connected_node: connected_node,
       },
     });
+
+    const textarea_element = evt.target;
+    const textarea_style = textarea_element.style;
+    console.log(textarea_element.scrollHeight);
+    textarea_style.height = "24px";
+    textarea_style.height = `${textarea_element.scrollHeight}px`;
+    textarea_style.height = `${Math.min(textarea_element.scrollHeight, 64)}px`;
   }
 
   let element = [];
@@ -39,6 +46,7 @@ function MainContainer() {
     let group = [];
     for (let j = 1; j < 10; j++) {
       const key = `x${i}y${j}`;
+
       group.push(
         <div key={key} className={`group${i}__item group__item`}>
           <label>
@@ -48,6 +56,7 @@ function MainContainer() {
               onChange={handleChange}
               type="text"
               value={data[key].text}
+              rows="1"
             />
           </label>
         </div>,
