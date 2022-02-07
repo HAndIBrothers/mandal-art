@@ -41,13 +41,15 @@ function MainContainer() {
       const key = `x${i}y${j}`;
       group.push(
         <div key={key} className={`group${i}__item group__item`}>
-          <textarea
-            id={key}
-            data-connected_node={data[key].connected_node}
-            onChange={handleChange}
-            type="text"
-            value={data[key].text}
-          />
+          <label>
+            <textarea
+              id={key}
+              data-connected_node={data[key].connected_node}
+              onChange={handleChange}
+              type="text"
+              value={data[key].text}
+            />
+          </label>
         </div>,
       );
     }
