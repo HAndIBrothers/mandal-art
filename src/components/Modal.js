@@ -44,30 +44,29 @@ export default function BasicModal() {
             variant="h6"
             component="h2"
           >
-            만다라트란?
+            What is Mandal-Art?
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            만다라트 기법(Mandal-Art)은 일본의 디자이너 이마이즈미
-            히로아키(今泉浩晃)가 창안한 것으로 불교의 만다라(曼荼羅) + 아트가
-            되어 만다라트라 불립니다.
+            Mandal-Art was created by Japanese designer Hiroaki Imaizumi. It
+            becomes a Buddhist Mandala(曼荼羅) + art.
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            핵심이 되는 목표를 설정하고 이루기 위한 방법과 아이디어를 적으며
-            구체화할 수 있으며, 그 방법들을 잊지 않기 위해 계속 되새길 때
-            유용하게 사용 가능합니다.
+            Using this, you can set key goals, write down and specify how and
+            ideas to achieve them, and keep reflecting on them not to forget
+            them.
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            이 만다라트로 유명한 것은 유명한 야구 선수인 오타니
-            쇼헤이(大谷翔平)로 어린 시절부터 자신의 목표를 정하고 정리해,
-            실행했다고 합니다.
+            Shohei Otani, a famous baseball player who is famous for using the
+            Mandal-Art, has set his goal as Mandal-Art since childhood,
+            organized and implemented it.
           </Typography>
           <a
             href="
-            https://www.youtube.com/results?sp=mAEB&search_query=%EB%A7%8C%EB%8B%A4%EB%9D%BC%ED%8A%B8+%EC%9E%91%EC%84%B1%EB%B2%95"
+            https://www.youtube.com/results?search_query=mandala+art+otani+shohei"
             sx={{ mt: 2 }}
             target="_blank"
           >
-            링크) 오타니 쇼헤이 선수 만다라트
+            Link) Shohei Otani Mandal-Art
           </a>
           <Typography
             className="modal-container__title"
@@ -76,22 +75,14 @@ export default function BasicModal() {
             component="h2"
             sx={{ mt: 3 }}
           >
-            작성법
+            How to write.
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            정 가운데에 최종 목표를 적은 후, 주위에 최종 목표를 달성하기 위한
-            세부 방법 혹은 아이디어를 적습니다. 다음으로 세부 방법 또한 각
-            방향에서 확장해서 그것을 달성하기 위한 방법과 아이디어를 적어
-            나갑니다.
+            Write down the final goal in the middle, and then write down the
+            detailed methods or ideas to achieve the final goal around you.
+            Next, the detailed method also expands in each direction and writes
+            down how and ideas to achieve it.
           </Typography>
-          <a
-            href="
-            https://www.youtube.com/results?sp=mAEB&search_query=%EB%A7%8C%EB%8B%A4%EB%9D%BC%ED%8A%B8+%EC%9E%91%EC%84%B1%EB%B2%95"
-            sx={{ mt: 2 }}
-            target="_blank"
-          >
-            예) 만다라트 작성법
-          </a>
           <table>
             <tr>
               <td></td>
@@ -107,108 +98,24 @@ export default function BasicModal() {
             <tr>
               <td></td>
               <td className="modal-container__item">
-                최종 목표
+                How to achieve
                 <br />
-                달성 방법1
+                the final goal 1
               </td>
               <td></td>
               <td></td>
               <td className="modal-container__item">
-                최종 목표
+                How to achieve
                 <br />
-                달성 방법2
+                the final goal 2
               </td>
               <td></td>
               <td></td>
               <td className="modal-container__item">
-                최종 목표
+                How to achieve
                 <br />
-                달성 방법3
+                the final goal 3
               </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="modal-container__item">
-                최종 목표
-                <br />
-                달성 방법1
-              </td>
-              <td className="modal-container__item">
-                최종 목표
-                <br />
-                달성 방법2
-              </td>
-              <td className="modal-container__item">
-                최종 목표
-                <br />
-                달성 방법3
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td className="modal-container__item">
-                최종 목표
-                <br />
-                달성 방법4
-              </td>
-              <td></td>
-              <td className="modal-container__item">
-                최종 목표
-                <br />
-                달성 방법4
-              </td>
-              <td className="modal-container__goal">최종 목표</td>
-              <td className="modal-container__item">
-                최종 목표
-                <br />
-                달성 방법5
-              </td>
-              <td></td>
-              <td className="modal-container__item">
-                최종 목표
-                <br />
-                달성 방법5
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="modal-container__item">
-                최종 목표
-                <br />
-                달성 방법6
-              </td>
-              <td className="modal-container__item">
-                최종 목표
-                <br />
-                달성 방법7
-              </td>
-              <td className="modal-container__item">
-                최종 목표
-                <br />
-                달성 방법8
-              </td>
-              <td></td>
-              <td></td>
               <td></td>
             </tr>
             <tr>
@@ -224,24 +131,108 @@ export default function BasicModal() {
             </tr>
             <tr>
               <td></td>
+              <td></td>
+              <td></td>
               <td className="modal-container__item">
-                최종 목표
+                How to achieve
                 <br />
-                달성 방법6
+                the final goal 1
+              </td>
+              <td className="modal-container__item">
+                How to achieve
+                <br />
+                the final goal 2
+              </td>
+              <td className="modal-container__item">
+                How to achieve
+                <br />
+                the final goal 3
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td className="modal-container__item">
+                How to achieve
+                <br />
+                the final goal 4
+              </td>
+              <td></td>
+              <td className="modal-container__item">
+                How to achieve
+                <br />
+                the final goal 4
+              </td>
+              <td className="modal-container__goal">Final goal</td>
+              <td className="modal-container__item">
+                How to achieve
+                <br />
+                the final goal 5
+              </td>
+              <td></td>
+              <td className="modal-container__item">
+                How to achieve
+                <br />
+                the final goal 5
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td className="modal-container__item">
+                How to achieve
+                <br />
+                the final goal 6
+              </td>
+              <td className="modal-container__item">
+                How to achieve
+                <br />
+                the final goal 7
+              </td>
+              <td className="modal-container__item">
+                How to achieve
+                <br />
+                the final goal 8
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td className="modal-container__item">
+                How to achieve
+                <br />
+                the final goal 6
               </td>
               <td></td>
               <td></td>
               <td className="modal-container__item">
-                최종 목표
+                How to achieve
                 <br />
-                달성 방법7
+                the final goal 7
               </td>
               <td></td>
               <td></td>
               <td className="modal-container__item">
-                최종 목표
+                How to achieve
                 <br />
-                달성 방법8
+                the final goal 8
               </td>
               <td></td>
             </tr>
