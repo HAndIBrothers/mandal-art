@@ -8,7 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 
 function setLocalStorage(key, value, connected_node) {
   localStorage.setItem(key, value);
-  console.log("Set Local Storage >> " + key + ":" + value);
+  // console.log("Set Local Storage >> " + key + ":" + value);
   if (connected_node != null) setLocalStorage(connected_node, value);
 }
 
@@ -18,7 +18,7 @@ function reducer(state, action) {
     case "INPUT_CHANGE":
       const { xy, value, connected_node } = action.payload;
       const newState = { ...state };
-      console.log("INPUT CHANGED");
+      // console.log("INPUT CHANGED");
       newState[xy].text = value;
       if (connected_node) {
         newState[connected_node].text = value;
