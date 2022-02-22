@@ -54,12 +54,12 @@ function MainContainer() {
   }
 
   function adjustTextareaHeight(ele, height) {
-    if (height <= 29) {
-      ele.style.height = "29px";
-    } else if (height <= 54) {
-      ele.style.height = "54px";
-    } else {
+    console.log(height);
+    ele.style.height = "auto";
+    if (height >= 79) {
       ele.style.height = "79px";
+    } else {
+      ele.style.height = height + "px";
     }
   }
 
