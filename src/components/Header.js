@@ -1,5 +1,13 @@
 ﻿import "./Header.css";
 
 export default function Header() {
-  return <h1>Mandal-Art</h1>;
+  function handleClick(evt) {}
+
+  return (
+    <h1>
+      <a href="/" onClick={handleClick}>
+        Mandal-Art
+      </a>
+    </h1>
+  );
 }
