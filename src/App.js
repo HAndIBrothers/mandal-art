@@ -4,6 +4,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "./components/Header";
 import UpperContainer from "./components/UpperContainer";
+import { useEffect, useRef } from "react";
 
 function App() {
   return (
@@ -18,6 +19,26 @@ function App() {
 function MainContainer() {
   const data = useSelector((state) => state);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    for (let i = 1; i < 10; i++) {
+      for (let j = 1; j < 10; j++) {
+        const key = `x${i}y${j}`;
+        if (data[key].text !== "") {
+          const textarea_filled = document.querySelector(`#${key}`);
+          const textarea_scroll_height = textarea_filled.scrollHeight;
+
+          if (textarea_scroll_height <= 29) {
+            textarea_filled.style.height = "29px";
+          } else if (textarea_scroll_height <= 54) {
+            textarea_filled.style.height = "54px";
+          } else {
+            textarea_filled.style.height = "79px";
+          }
+        }
+      }
+    }
+  }, [data]);
 
   function handleChange(evt) {
     const connected_node = evt.target.dataset.connected_node
@@ -37,7 +58,7 @@ function MainContainer() {
   function handleInput(evt) {
     const textarea = evt.target;
     const textarea_height_read_only = textarea.scrollHeight;
-    console.log(textarea_height_read_only);
+    // console.log(textarea_height_read_only);
     textarea.style.height = 0;
 
     if (textarea_height_read_only <= 29) {
