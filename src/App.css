@@ -63,8 +63,6 @@
 }
 
 .group__item {
-  /* border: red 1px dotted; */
-
   width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -84,9 +82,8 @@
 
   font-size: larger;
   text-align: center;
-
-  resize: none;
   overflow: hidden;
+  resize: none;
 
   line-height: 25px;
 }

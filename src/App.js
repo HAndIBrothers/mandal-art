@@ -34,6 +34,7 @@ function MainContainer() {
     }
   }, []);
 
+  // To do 1 :: debounce 추가(입력 중일때 event 작동 안하게)
   function handleInput(evt) {
     const connected_node = evt.target.dataset.connected_node
       ? evt.target.dataset.connected_node
@@ -49,17 +50,15 @@ function MainContainer() {
     });
 
     const textarea = evt.target;
-    const textarea_scroll_height = textarea.scrollHeight;
-    adjustTextareaHeight(textarea, textarea_scroll_height);
+    textarea.style.height = "auto";
+    adjustTextareaHeight(textarea, textarea.scrollHeight);
   }
 
-  function adjustTextareaHeight(ele, height) {
-    console.log(height);
-    ele.style.height = "auto";
-    if (height >= 79) {
+  function adjustTextareaHeight(ele, scrollHeight) {
+    if (scrollHeight >= 79) {
       ele.style.height = "79px";
     } else {
-      ele.style.height = height + "px";
+      ele.style.height = scrollHeight + "px";
     }
   }
 
