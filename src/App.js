@@ -4,6 +4,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "./components/Header";
 import UpperContainer from "./components/UpperContainer";
+import { useEffect } from "react";
 
 function App() {
   return (
@@ -19,7 +20,22 @@ function MainContainer() {
   const data = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  function handleChange(evt) {
+  useEffect(() => {
+    for (let i = 1; i < 10; i++) {
+      for (let j = 1; j < 10; j++) {
+        const key = `x${i}y${j}`;
+        if (data[key].text !== "") {
+          const textarea_had_data = document.querySelector(`#${key}`);
+          const textarea_scroll_height = textarea_had_data.scrollHeight;
+
+          adjustTextareaHeight(textarea_had_data, textarea_scroll_height);
+        }
+      }
+    }
+  }, []);
+
+  // To do 1 :: debounce 추가(입력 중일때 event 작동 안하게)
+  function handleInput(evt) {
     const connected_node = evt.target.dataset.connected_node
       ? evt.target.dataset.connected_node
       : null;
@@ -32,6 +48,18 @@ function MainContainer() {
         connected_node: connected_node,
       },
     });
+
+    const textarea = evt.target;
+    textarea.style.height = "auto";
+    adjustTextareaHeight(textarea, textarea.scrollHeight);
+  }
+
+  function adjustTextareaHeight(ele, scrollHeight) {
+    if (scrollHeight >= 79) {
+      ele.style.height = "79px";
+    } else {
+      ele.style.height = scrollHeight + "px";
+    }
   }
 
   let element = [];
@@ -44,7 +72,8 @@ function MainContainer() {
           <textarea
             id={key}
             data-connected_node={data[key].connected_node}
-            onChange={handleChange}
+            onInput={handleInput}
+            rows="1"
             type="text"
             value={data[key].text}
           />
@@ -57,6 +86,7 @@ function MainContainer() {
       </div>,
     );
   }
+
   return (
     <main className="main">
       <section className="cell-container">{element}</section>
