@@ -11,11 +11,6 @@ export default function Header() {
       <a href="/" onClick={handleClick}>
         Mandal-Art
       </a>
-      <section className="button-container">
-        <Modal />
-        <ResetButton />
-        <ImageDownloadButton />
-      </section>
     </h1>
   );
 }
