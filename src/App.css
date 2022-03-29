@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
 .container {
-  width: clamp(800px, 95%, 1200px);
+  width: clamp(600px, 95%, 900px);
   aspect-ratio: 1;
   margin: 10px auto;
-  background-color: #a9e1e0;
   border-radius: 1%;
   padding: 10px;
   font-family: Jua, sans-serif;
@@ -71,7 +70,7 @@
 }
 
 .group__item {
-  border: 1px red dotted;
+  border: 1px #a9e1e0 dotted;
   display: flex;
   align-items: center;
 }
@@ -92,16 +91,25 @@
   outline: none;
 }
 
+.group2__item,
 .group2__item > textarea,
+.group4__item,
 .group4__item > textarea,
+.group6__item,
 .group6__item > textarea,
+.group8__item,
 .group8__item > textarea {
-  background-color: #dcf3f2;
+  background-color: #e5f6f5;
 }
 
 .group__item:nth-child(5) > textarea {
   font-weight: bolder;
   font-size: x-large;
+}
+
+.group5__item:nth-child(5),
+.group5__item:nth-child(5) > textarea {
+  background-color: #fff2cc;
 }
 
 table > tr > td {
