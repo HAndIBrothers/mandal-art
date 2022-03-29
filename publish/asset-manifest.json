@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mandal-art/static/css/main.d09d0cee.css",
+    "main.css": "/mandal-art/static/css/main.e7fed419.css",
     "main.js": "/mandal-art/static/js/main.bb1074fa.js",
     "static/js/787.f1b57310.chunk.js": "/mandal-art/static/js/787.f1b57310.chunk.js",
     "index.html": "/mandal-art/index.html",
-    "main.d09d0cee.css.map": "/mandal-art/static/css/main.d09d0cee.css.map",
+    "main.e7fed419.css.map": "/mandal-art/static/css/main.e7fed419.css.map",
     "main.bb1074fa.js.map": "/mandal-art/static/js/main.bb1074fa.js.map",
     "787.f1b57310.chunk.js.map": "/mandal-art/static/js/787.f1b57310.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d09d0cee.css",
+    "static/css/main.e7fed419.css",
     "static/js/main.bb1074fa.js"
   ]
 }

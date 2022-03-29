@@ -105,6 +105,19 @@
   background-color: #e5f6f5;
 }
 
+.group1__item,
+.group1__item > textarea,
+.group3__item,
+.group3__item > textarea,
+.group5__item,
+.group5__item > textarea,
+.group7__item,
+.group7__item > textarea,
+.group9__item,
+.group9__item > textarea {
+  background-color: white;
+}
+
 .group__item:nth-child(5) > textarea {
   font-weight: bold;
   font-size: large;
