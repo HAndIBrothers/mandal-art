@@ -2,9 +2,15 @@
   background-color: #a9e1e0;
   border-radius: 10px;
   padding-left: 10px;
+  padding-right: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 h1 > a {
-  color: inherit;
+  flex-basis: 50%;
+  color: #444444;
   text-decoration: none;
 }

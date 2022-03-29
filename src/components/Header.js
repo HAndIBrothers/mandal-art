@@ -1,4 +1,7 @@
 ﻿import "./Header.css";
+import Modal from "./Modal";
+import ResetButton from "./ResetButton";
+import ImageDownloadButton from "./ImageDownloadButton";
 
 export default function Header() {
   function handleClick(evt) {}
@@ -8,6 +11,11 @@ export default function Header() {
       <a href="/" onClick={handleClick}>
         Mandal-Art
       </a>
+      <section className="button-container">
+        <Modal />
+        <ResetButton />
+        <ImageDownloadButton />
+      </section>
     </h1>
   );
 }
